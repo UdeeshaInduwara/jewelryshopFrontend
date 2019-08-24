@@ -6,12 +6,20 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { GemComponent } from './gem/gem.component';
+import { MetalComponent } from './metal/metal.component';
+import { MakersComponent } from './makers/makers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    DashboardComponent,
+    GemComponent,
+    MetalComponent,
+    MakersComponent
   ],
   imports: [
     BrowserModule,
