@@ -1,3 +1,5 @@
+import { Gem } from './../models/gem.model';
+import { GemService } from './../services/gem.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gem.component.scss']
 })
 export class GemComponent implements OnInit {
+  gems: Array<Gem> = []
 
-  constructor() { }
+  constructor(private gemService: GemService) { }
 
   ngOnInit() {
+    this.gemService.getAllGem().subscribe(rst => {
+      this.gems = rst;
+    });
   }
 
 }
