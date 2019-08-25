@@ -8,11 +8,20 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class MakersService {
-  private url = 'jewelryMakers';
+  private mainUrl: string = environment.apiUrl;
+  private url: string = 'jewelryMakers';
   constructor(private http: HttpClient) {
   }
 
   getAllMakers(): Observable<Array<Makers>> {
-    return this.http.get<Array<Makers>>(environment.apiUrl + this.url);
+    return this.http.get<Array<Makers>>(this.mainUrl + this.url);
+  }
+
+  saveMakers(makers: Makers): Observable<boolean> {
+    return this.http.post<boolean>(this.mainUrl + this.url, makers);
+  }
+
+  deleteMakers(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(this.mainUrl + this.url + '/' + id);
   }
 }

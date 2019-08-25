@@ -8,11 +8,20 @@ import { Gem } from '../models/gem.model';
   providedIn: 'root'
 })
 export class GemService {
-  private url = 'gem';
+  private mainUrl: string = environment.apiUrl;
+  private url: string = 'gem';
   constructor(private http: HttpClient) {
   }
 
   getAllGem(): Observable<Array<Gem>> {
-    return this.http.get<Array<Gem>>(environment.apiUrl + this.url);
+    return this.http.get<Array<Gem>>(this.mainUrl + this.url);
+  }
+
+  saveGem(gem: Gem): Observable<boolean> {
+    return this.http.post<boolean>(this.mainUrl + this.url, gem);
+  }
+
+  deleteGem(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(this.mainUrl + this.url + '/' + id);
   }
 }
