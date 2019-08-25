@@ -1,3 +1,5 @@
+import { MakersService } from './../services/makers.service';
+import { Makers } from './../models/makers.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./makers.component.scss']
 })
 export class MakersComponent implements OnInit {
+  makers: Array<Makers> = [];
 
-  constructor() { }
+  constructor(private makersService: MakersService) { }
 
   ngOnInit() {
+    this.makersService.getAllMakers().subscribe(rst => {
+      this.makers = rst;
+    });
   }
 
 }

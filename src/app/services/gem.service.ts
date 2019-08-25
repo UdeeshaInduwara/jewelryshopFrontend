@@ -8,7 +8,7 @@ import { Gem } from '../models/gem.model';
   providedIn: 'root'
 })
 export class GemService {
-  url = 'gem';
+  private url = 'gem';
   constructor(private http: HttpClient) {
   }
 
