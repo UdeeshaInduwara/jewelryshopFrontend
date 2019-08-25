@@ -1,5 +1,34 @@
-<div class="container">
-  <ul>
-    <li *ngFor="let gem of gems">{{gem.gemId}}</li>
-  </ul>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title ">Simple Table</h4>
+                    <p class="card-category"> Here is a subtitle for this table</p>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <th>Gem ID</th>
+                                <th>Gem Type</th>
+                                <th>Carat</th>
+                                <th>Weight</th>
+                                <th>Added Date</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let gem of gems">
+                                    <td>{{gem.gemId}}</td>
+                                    <td>{{gem.gemType}}</td>
+                                    <td>{{gem.carat}}</td>
+                                    <td>{{gem.weight}}</td>
+                                    <td>{{gem.addedDate}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

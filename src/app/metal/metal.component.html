@@ -1,3 +1,34 @@
-<p>
-  metal works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-danger">
+          <h4 class="card-title ">Simple Table</h4>
+          <p class="card-category"> Here is a subtitle for this table</p>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <th>Metal ID</th>
+                <th>Metal Type</th>
+                <th>Carat</th>
+                <th>Weight</th>
+                <th>Added Date</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let metal of metals">
+                  <td>{{metal.metalId}}</td>
+                  <td>{{metal.metalType}}</td>
+                  <td>{{metal.carat}}</td>
+                  <td>{{metal.weight}}</td>
+                  <td>{{metal.addedDate}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
