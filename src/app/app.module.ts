@@ -11,7 +11,7 @@ import { GemComponent } from './gem/gem.component';
 import { MetalComponent } from './metal/metal.component';
 import { MakersComponent } from './makers/makers.component';
 import { HttpClientModule } from '@angular/common/http';
-import {MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule} from '@angular/material';
+import {MatButtonModule, MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
@@ -33,7 +33,8 @@ import {FormsModule} from '@angular/forms';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

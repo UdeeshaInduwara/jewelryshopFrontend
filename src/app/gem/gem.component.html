@@ -59,6 +59,7 @@
               <th>Carat</th>
               <th>Weight</th>
               <th>Added Date</th>
+              <th>Action</th>
               </thead>
               <tbody>
               <tr *ngFor="let gem of gems">
@@ -67,6 +68,14 @@
                 <td>{{gem.carat}}</td>
                 <td>{{gem.weight}}</td>
                 <td>{{gem.addedDate | date}}</td>
+                <td>
+                  <button mat-mini-fab class="btn btn-danger">
+                    <i class="material-icons">delete</i>
+                  </button>
+                  <button mat-mini-fab class="btn btn-danger ml-1">
+                    <i class="material-icons">delete</i>
+                  </button>
+                </td>
               </tr>
               </tbody>
             </table>
