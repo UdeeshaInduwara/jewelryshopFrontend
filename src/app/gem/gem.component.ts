@@ -1,6 +1,6 @@
-import { Gem } from './../models/gem.model';
-import { GemService } from './../services/gem.service';
-import { Component, OnInit } from '@angular/core';
+import {Gem} from './../models/gem.model';
+import {GemService} from './../services/gem.service';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-gem',
@@ -22,6 +22,12 @@ export class GemComponent implements OnInit {
 
   saveGem() {
     this.gemService.saveGem(this.gemDate).subscribe(rst => {
+      console.log(rst);
+    });
+  }
+
+  deleteGem(id: number) {
+    this.gemService.deleteGem(id).subscribe(rst => {
       console.log(rst);
     });
   }

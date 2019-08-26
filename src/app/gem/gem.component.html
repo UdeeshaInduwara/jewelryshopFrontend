@@ -69,10 +69,7 @@
                 <td>{{gem.weight}}</td>
                 <td>{{gem.addedDate | date}}</td>
                 <td>
-                  <button mat-mini-fab class="btn btn-danger">
-                    <i class="material-icons">delete</i>
-                  </button>
-                  <button mat-mini-fab class="btn btn-danger ml-1">
+                  <button mat-mini-fab class="btn btn-danger" (click)="deleteGem(gem.gemId)">
                     <i class="material-icons">delete</i>
                   </button>
                 </td>
