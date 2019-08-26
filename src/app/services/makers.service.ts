@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class MakersService {
   private mainUrl: string = environment.apiUrl;
-  private url: string = 'jewelryMakers';
+  private url: string = 'jewelryMaker';
   constructor(private http: HttpClient) {
   }
 
