@@ -3,6 +3,34 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header card-header-danger">
+          <h4 class="card-title">Edit Profile</h4>
+          <p class="card-category">Complete your profile</p>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Jewelry Maker Name" type="text">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Contact Number" type="number">
+                </mat-form-field>
+              </div>
+            </div>
+            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update Profile</button>
+            <div class="clearfix"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-danger">
           <h4 class="card-title ">Simple Table</h4>
           <p class="card-category"> Here is a subtitle for this table</p>
         </div>
@@ -10,16 +38,16 @@
           <div class="table-responsive">
             <table class="table">
               <thead>
-                <th>Jewelry Maker ID</th>
-                <th>Jewelry Maker Name</th>
-                <th>Contact Number</th>>
+              <th>Jewelry Maker ID</th>
+              <th>Jewelry Maker Name</th>
+              <th>Contact Number</th>
               </thead>
               <tbody>
-                <tr *ngFor="let maker of makers">
-                  <td>{{maker.jewMId}}</td>
-                  <td>{{maker.jewMName}}</td>
-                  <td>{{maker.contactNo}}</td>
-                </tr>
+              <tr *ngFor="let maker of makers">
+                <td>{{maker.jewMId}}</td>
+                <td>{{maker.jewMName}}</td>
+                <td>{{maker.contactNo}}</td>
+              </tr>
               </tbody>
             </table>
           </div>

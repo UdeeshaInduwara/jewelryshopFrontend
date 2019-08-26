@@ -11,6 +11,7 @@ import { GemComponent } from './gem/gem.component';
 import { MetalComponent } from './metal/metal.component';
 import { MakersComponent } from './makers/makers.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatFormFieldModule, MatInputModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
