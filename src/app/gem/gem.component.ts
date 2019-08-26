@@ -8,13 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gem.component.scss']
 })
 export class GemComponent implements OnInit {
-  gems: Array<Gem> = []
+  gems: Array<Gem> = [];
+  gemDate: Gem = new Gem();
 
-  constructor(private gemService: GemService) { }
+  constructor(private gemService: GemService) {
+  }
 
   ngOnInit() {
     this.gemService.getAllGem().subscribe(rst => {
       this.gems = rst;
+    });
+  }
+
+  saveGem() {
+    this.gemService.saveGem(this.gemDate).subscribe(rst => {
+      console.log(rst);
     });
   }
 

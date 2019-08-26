@@ -12,6 +12,7 @@ import { MetalComponent } from './metal/metal.component';
 import { MakersComponent } from './makers/makers.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule} from '@angular/material';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateMo
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
