@@ -1,6 +1,7 @@
 import {MakersService} from './../services/makers.service';
 import {Makers} from './../models/makers.model';
 import {Component, OnInit} from '@angular/core';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-makers',
@@ -11,7 +12,10 @@ export class MakersComponent implements OnInit {
   makers: Array<Makers> = [];
   makersData: Makers = new Makers();
 
-  constructor(private makersService: MakersService) {
+  constructor(
+    private makersService: MakersService,
+    private notificationService: NotificationService
+    ) {
   }
 
   ngOnInit() {

@@ -1,6 +1,7 @@
 import {MetalService} from './../services/metal.service';
 import {Metal} from './../models/metal.model';
 import {Component, OnInit} from '@angular/core';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-metal',
@@ -11,7 +12,10 @@ export class MetalComponent implements OnInit {
   metals: Array<Metal> = [];
   metalData: Metal = new Metal();
 
-  constructor(private metalService: MetalService) {
+  constructor(
+    private metalService: MetalService,
+    private notificationService: NotificationService
+    ) {
   }
 
   ngOnInit() {

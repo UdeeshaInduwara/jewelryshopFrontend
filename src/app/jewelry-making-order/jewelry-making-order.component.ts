@@ -7,6 +7,7 @@ import {Gem} from '../models/gem.model';
 import {Makers} from '../models/makers.model';
 import {Metal} from '../models/metal.model';
 import { GemService } from '../services/gem.service';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-jewelry-making-order',
@@ -28,7 +29,8 @@ export class JewelryMakingOrderComponent implements OnInit {
     private jewelryMakingOrderService: JewelryMakingOrderService,
     private gemService: GemService,
     private metalService: MetalService,
-    private makersService: MakersService
+    private makersService: MakersService,
+    private notificationService: NotificationService
     ) {
   }
 

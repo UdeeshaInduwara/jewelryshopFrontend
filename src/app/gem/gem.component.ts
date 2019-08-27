@@ -1,6 +1,7 @@
 import {Gem} from './../models/gem.model';
 import {GemService} from './../services/gem.service';
 import {Component, OnInit} from '@angular/core';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-gem',
@@ -11,7 +12,10 @@ export class GemComponent implements OnInit {
   gems: Array<Gem> = [];
   gemData: Gem = new Gem();
 
-  constructor(private gemService: GemService) {
+  constructor(
+    private gemService: GemService,
+    private notificationService: NotificationService
+    ) {
   }
 
   ngOnInit() {
