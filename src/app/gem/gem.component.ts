@@ -9,7 +9,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class GemComponent implements OnInit {
   gems: Array<Gem> = [];
-  gemDate: Gem = new Gem();
+  gemData: Gem = new Gem();
 
   constructor(private gemService: GemService) {
   }
@@ -21,7 +21,7 @@ export class GemComponent implements OnInit {
   }
 
   saveGem() {
-    this.gemService.saveGem(this.gemDate).subscribe(rst => {
+    this.gemService.saveGem(this.gemData).subscribe(rst => {
       console.log(rst);
     });
   }

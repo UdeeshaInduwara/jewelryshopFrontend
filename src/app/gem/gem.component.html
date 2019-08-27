@@ -11,17 +11,17 @@
             <div class="row">
               <div class="col-md-4">
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Gem Type" type="text" name="gemType" [(ngModel)]="gemDate.gemType">
+                  <input matInput placeholder="Gem Type" type="text" name="gemType" [(ngModel)]="gemData.gemType">
                 </mat-form-field>
               </div>
               <div class="col-md-4">
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Carat" type="number" name="carat" [(ngModel)]="gemDate.carat">
+                  <input matInput placeholder="Carat" type="number" name="carat" [(ngModel)]="gemData.carat">
                 </mat-form-field>
               </div>
               <div class="col-md-4">
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Weight" type="number" name="weight" [(ngModel)]="gemDate.weight">
+                  <input matInput placeholder="Weight" type="number" name="weight" [(ngModel)]="gemData.weight">
                 </mat-form-field>
               </div>
             </div>
@@ -29,7 +29,7 @@
               <div class="col-md-12">
                 <mat-form-field class="example-full-width">
                   <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="addedDate"
-                         [(ngModel)]="gemDate.addedDate">
+                         [(ngModel)]="gemData.addedDate">
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker touchUi #picker></mat-datepicker>
                 </mat-form-field>
