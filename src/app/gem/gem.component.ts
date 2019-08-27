@@ -15,6 +15,10 @@ export class GemComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getAllGem();
+  }
+
+  getAllGem(){
     this.gemService.getAllGem().subscribe(rst => {
       this.gems = rst;
     });
