@@ -1,9 +1,12 @@
+import { MakersService } from './../services/makers.service';
+import { MetalService } from './../services/metal.service';
 import {Component, OnInit} from '@angular/core';
 import {JewelryMakingOrderService} from '../services/jewelry-making-order.service';
 import {JewelryMakingOrder} from '../models/jewelry-making-order.model';
 import {Gem} from '../models/gem.model';
 import {Makers} from '../models/makers.model';
 import {Metal} from '../models/metal.model';
+import { GemService } from '../services/gem.service';
 
 @Component({
   selector: 'app-jewelry-making-order',
@@ -16,10 +19,37 @@ export class JewelryMakingOrderComponent implements OnInit {
   metalData: Metal = new Metal();
   jewelryMakingOrderData: JewelryMakingOrder = new JewelryMakingOrder();
 
-  constructor(private jewelryMakingOrderService: JewelryMakingOrderService) {
+  gems: Array<Gem> = [];
+  makers: Array<Makers> = [];
+  metals: Array<Metal> = [];
+
+  constructor(
+    private jewelryMakingOrderService: JewelryMakingOrderService,
+    private gemService: GemService,
+    private metalService: MetalService,
+    private makersService: MakersService
+    ) {
   }
 
   ngOnInit() {
+  }
+
+  getAllGem(){
+    this.gemService.getAllGem().subscribe(rst => {
+      this.gems = rst;
+    });
+  }
+
+  getAllMakers() {
+    this.makersService.getAllMakers().subscribe(rst => {
+      this.makers = rst;
+    });
+  }
+
+  getAllMetal() {
+    this.metalService.getAllMetal().subscribe(rst => {
+      this.metals = rst;
+    });
   }
 
   placeOrder() {
