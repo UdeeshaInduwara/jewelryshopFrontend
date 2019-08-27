@@ -11,16 +11,20 @@
             <div class="row">
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Jewelry Maker Name" type="text">
+                  <input matInput placeholder="Jewelry Maker Name" type="text" name="jewMName"
+                         [(ngModel)]="makersData.jewMName">
                 </mat-form-field>
               </div>
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Contact Number" type="number">
+                  <input matInput placeholder="Contact Number" type="number" name="contactNo"
+                         [(ngModel)]="makersData.contactNo">
                 </mat-form-field>
               </div>
             </div>
-            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update Profile</button>
+            <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="saveMakers()">Save
+              Jewelry Maker
+            </button>
             <div class="clearfix"></div>
           </form>
         </div>
@@ -41,12 +45,18 @@
               <th>Jewelry Maker ID</th>
               <th>Jewelry Maker Name</th>
               <th>Contact Number</th>
+              <th>Action</th>
               </thead>
               <tbody>
               <tr *ngFor="let maker of makers">
                 <td>{{maker.jewMId}}</td>
                 <td>{{maker.jewMName}}</td>
                 <td>{{maker.contactNo}}</td>
+                <td>
+                  <button mat-mini-fab class="btn btn-danger" (click)="deleteMakers(maker.jewMId)">
+                    <i class="material-icons">delete</i>
+                  </button>
+                </td>
               </tr>
               </tbody>
             </table>
