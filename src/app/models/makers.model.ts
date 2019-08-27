@@ -1,5 +1,5 @@
 export class Makers {
-    jewMId: number
-    jewMName: string
-    contactNo: number
+  jewMId: number;
+  jewMName: string;
+  contactNo: number;
 }

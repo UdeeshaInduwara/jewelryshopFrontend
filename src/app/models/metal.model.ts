@@ -1,7 +1,7 @@
 export class Metal {
-    metalId: number
-    metalType: string
-    carat: number
-    weight: number
-    addedDate: number
+  metalId: number;
+  metalType: string;
+  carat: number;
+  weight: number;
+  addedDate: number;
 }

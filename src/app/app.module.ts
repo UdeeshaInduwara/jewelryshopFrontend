@@ -13,6 +13,7 @@ import { MakersComponent } from './makers/makers.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule, MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
+import { JewelryMakingOrderComponent } from './jewelry-making-order/jewelry-making-order.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {FormsModule} from '@angular/forms';
     DashboardComponent,
     GemComponent,
     MetalComponent,
-    MakersComponent
+    MakersComponent,
+    JewelryMakingOrderComponent
   ],
   imports: [
     BrowserModule,
