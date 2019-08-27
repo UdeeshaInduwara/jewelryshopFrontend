@@ -11,7 +11,7 @@ import { GemComponent } from './gem/gem.component';
 import { MetalComponent } from './metal/metal.component';
 import { MakersComponent } from './makers/makers.component';
 import { HttpClientModule } from '@angular/common/http';
-import {MatButtonModule, MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule} from '@angular/material';
+import {MatButtonModule, MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule, MatSelectModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import { JewelryMakingOrderComponent } from './jewelry-making-order/jewelry-making-order.component';
 
@@ -36,7 +36,8 @@ import { JewelryMakingOrderComponent } from './jewelry-making-order/jewelry-maki
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
