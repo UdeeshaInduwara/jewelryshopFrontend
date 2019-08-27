@@ -22,6 +22,7 @@ export class JewelryMakingOrderComponent implements OnInit {
   gems: Array<Gem> = [];
   makers: Array<Makers> = [];
   metals: Array<Metal> = [];
+  orders: Array<JewelryMakingOrder> = [];
 
   constructor(
     private jewelryMakingOrderService: JewelryMakingOrderService,
@@ -52,6 +53,12 @@ export class JewelryMakingOrderComponent implements OnInit {
   getAllMetal() {
     this.metalService.getAllMetal().subscribe(rst => {
       this.metals = rst;
+    });
+  }
+
+  getAllOrders(){
+    this.jewelryMakingOrderService.getAllJewelryMakingOrders().subscribe(rst => {
+      this.orders = rst;
     });
   }
 

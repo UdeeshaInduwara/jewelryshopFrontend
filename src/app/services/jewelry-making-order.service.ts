@@ -17,4 +17,8 @@ export class JewelryMakingOrderService {
   placeOrder(jewelryMakingOrder: JewelryMakingOrder): Observable<boolean> {
     return this.http.post<boolean>(this.mainUrl + this.url, jewelryMakingOrder);
   }
+
+  getAllJewelryMakingOrders(): Observable<Array<JewelryMakingOrder>> {
+    return this.http.get<Array<JewelryMakingOrder>>(this.mainUrl + this.url);
+  }
 }
