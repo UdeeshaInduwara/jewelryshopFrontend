@@ -1,1 +1,60 @@
-<p>jewelry-making-order works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title">Edit Profile</h4>
+                    <p class="card-category">Complete your profile</p>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field>
+                                    <mat-label>Select Metal</mat-label>
+                                    <mat-select>
+                                        <mat-option *ngFor="let metal of metals" [value]="metal.metalId">
+                                            {{metal.metalType}} ({{metal.carat}})
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Weight" type="number" name="givenMetalWeight"
+                                        [(ngModel)]="jewelryMakingOrderData.givenMetalWeight">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field>
+                                    <mat-label>Select Gold</mat-label>
+                                    <mat-select>
+                                        <mat-option *ngFor="let gem of gems" [value]="gem.gemId">
+                                            {{gem.gemType}} ({{gem.weight}})
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field>
+                                    <mat-label>Select Jewelry Maker</mat-label>
+                                    <mat-select>
+                                        <mat-option *ngFor="let maker of makers" [value]="maker.jewMId">
+                                            {{maker.jewMName}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="placeOrder()">Save
+                            Order
+                        </button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

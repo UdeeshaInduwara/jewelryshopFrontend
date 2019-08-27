@@ -32,6 +32,9 @@ export class JewelryMakingOrderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getAllGem();
+    this.getAllMetal();
+    this.getAllMakers();
   }
 
   getAllGem(){
