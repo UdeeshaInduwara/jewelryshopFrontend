@@ -44,6 +44,32 @@
       </div>
     </div>
   </div>
+  <div class="row" *ngIf="editCardVisible">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-danger">
+          <h4 class="card-title">Edit Profile</h4>
+          <p class="card-category">Complete your profile</p>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Metal Type" type="text" name="metalId" [(ngModel)]="updateMetalData.metalId">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Add New Weight" type="number" name="updatedWeight" [(ngModel)]="updateMetalData.updatedWeight">
+                </mat-form-field>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-12">
       <div class="card">
@@ -72,6 +98,10 @@
                 <td>
                   <button mat-mini-fab class="btn btn-danger" (click)="deleteMetal(metal.metalId)">
                     <i class="material-icons">delete</i>
+                  </button>
+
+                  <button mat-mini-fab class="btn btn-danger ml-2" (click)="editMetal()">
+                    <i class="material-icons">create</i>
                   </button>
                 </td>
               </tr>

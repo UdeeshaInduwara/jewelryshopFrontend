@@ -2,6 +2,7 @@ import {MetalService} from './../services/metal.service';
 import {Metal} from './../models/metal.model';
 import {Component, OnInit} from '@angular/core';
 import {NotificationService} from '../services/notification.service';
+import {UpdateMetal} from '../models/update-metal.model';
 
 @Component({
   selector: 'app-metal',
@@ -11,6 +12,8 @@ import {NotificationService} from '../services/notification.service';
 export class MetalComponent implements OnInit {
   metals: Array<Metal> = [];
   metalData: Metal = new Metal();
+  editCardVisible = false;
+  updateMetalData: UpdateMetal = new UpdateMetal();
 
   constructor(
     private metalService: MetalService,
@@ -48,6 +51,10 @@ export class MetalComponent implements OnInit {
         this.notificationService.show(3, 'Metal Deleting Failed');
       }
     });
+  }
+
+  editMetal() {
+    this.editCardVisible = !this.editCardVisible;
   }
 
 }
