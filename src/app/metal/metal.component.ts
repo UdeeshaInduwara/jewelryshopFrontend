@@ -1,7 +1,7 @@
 import {MetalService} from './../services/metal.service';
 import {Metal} from './../models/metal.model';
 import {Component, OnInit} from '@angular/core';
-import { NotificationService } from '../services/notification.service';
+import {NotificationService} from '../services/notification.service';
 
 @Component({
   selector: 'app-metal',
@@ -15,7 +15,7 @@ export class MetalComponent implements OnInit {
   constructor(
     private metalService: MetalService,
     private notificationService: NotificationService
-    ) {
+  ) {
   }
 
   ngOnInit() {
@@ -30,13 +30,23 @@ export class MetalComponent implements OnInit {
 
   saveMetal() {
     this.metalService.saveMetal(this.metalData).subscribe(rst => {
-      console.log(rst);
+      if (rst) {
+        this.getAllMetal();
+        this.notificationService.show(1, 'Metal Saved Successfully');
+      } else {
+        this.notificationService.show(3, 'Metal Saving Failed');
+      }
     });
   }
 
   deleteMetal(id: number) {
     this.metalService.deleteMetal(id).subscribe(rst => {
-      console.log(rst);
+      if (rst) {
+        this.getAllMetal();
+        this.notificationService.show(1, 'Metal Deleted Successfully');
+      } else {
+        this.notificationService.show(3, 'Metal Deleting Failed');
+      }
     });
   }
 

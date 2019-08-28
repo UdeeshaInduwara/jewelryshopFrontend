@@ -69,7 +69,14 @@ export class JewelryMakingOrderComponent implements OnInit {
     this.jewelryMakingOrderData.metal = this.metalData;
     this.jewelryMakingOrderData.jewelryMaker = this.makersData;
     this.jewelryMakingOrderService.placeOrder(this.jewelryMakingOrderData).subscribe(rst => {
-      console.log(rst);
+      if (rst) {
+        this.getAllGem();
+        this.getAllMetal();
+        this.getAllMakers();
+        this.notificationService.show(1, 'Jewelry Making Order Placed Successfully');
+      } else {
+        this.notificationService.show(3, 'Jewelry Making Order Placing Failed');
+      }
     });
   }
 
