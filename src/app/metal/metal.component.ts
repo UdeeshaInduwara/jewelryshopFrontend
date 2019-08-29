@@ -12,7 +12,7 @@ import { UpdateMetal } from '../models/update-metal.model';
 export class MetalComponent implements OnInit {
   metals: Array<Metal> = [];
   metalData: Metal = new Metal();
-  editCardVisible = true;
+  editCardVisible = false;
   updateMetalData: UpdateMetal = new UpdateMetal();
   selectedMetalType: string;
   selectedMetalCarat: number;
