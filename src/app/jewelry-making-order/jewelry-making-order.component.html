@@ -79,17 +79,19 @@
                 <th>Order ID</th>
                 <th>Gem</th>
                 <th>Metal</th>
-                <th>Metal Weight</th>
-                <th>Ordered Date</th>
+                <th>Given Metal Weight</th>
+                <th>Jewelry Maker</th>
+                <th>Given Date</th>
               </thead>
               <tbody>
-                <!-- <tr *ngFor="let gem of gems">
-                  <td>{{gem.gemId}}</td>
-                  <td>{{gem.gemType}}</td>
-                  <td>{{gem.carat}}</td>
-                  <td>{{gem.weight}}</td>
-                  <td>{{gem.addedDate | date}}</td>
-                </tr> -->
+                <tr *ngFor="let order of orders">
+                  <td>{{order.jewMDId}}</td>
+                  <td>{{order.gem?.gemType}}</td>
+                  <td>{{order.metal?.metalType}}</td>
+                  <td>{{order.givenMetalWeight}}</td>
+                  <td>{{order.jewelryMaker?.jewMName}}</td>
+                  <td>{{order.givenDate | date}}</td>
+                </tr>
               </tbody>
             </table>
           </div>

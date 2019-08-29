@@ -35,6 +35,7 @@ export class JewelryMakingOrderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getAllOrders();
     this.getAllGem();
     this.getAllMetal();
     this.getAllMakers();
@@ -70,6 +71,7 @@ export class JewelryMakingOrderComponent implements OnInit {
     this.jewelryMakingOrderData.jewelryMaker = this.makersData;
     this.jewelryMakingOrderService.placeOrder(this.jewelryMakingOrderData).subscribe(rst => {
       if (rst) {
+        this.getAllOrders();
         this.getAllGem();
         this.getAllMetal();
         this.getAllMakers();
