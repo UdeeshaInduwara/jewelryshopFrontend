@@ -1,8 +1,8 @@
-import { MetalService } from './../services/metal.service';
-import { Metal } from './../models/metal.model';
-import { Component, OnInit } from '@angular/core';
-import { NotificationService } from '../services/notification.service';
-import { UpdateMetal } from '../models/update-metal.model';
+import {MetalService} from './../services/metal.service';
+import {Metal} from './../models/metal.model';
+import {Component, OnInit} from '@angular/core';
+import {NotificationService} from '../services/notification.service';
+import {UpdateMetal} from '../models/update-metal.model';
 
 @Component({
   selector: 'app-metal',
@@ -16,6 +16,7 @@ export class MetalComponent implements OnInit {
   updateMetalData: UpdateMetal = new UpdateMetal();
   selectedMetalType: string;
   selectedMetalCarat: number;
+  selectedMetalWeight: number;
 
   constructor(
     private metalService: MetalService,
@@ -55,10 +56,11 @@ export class MetalComponent implements OnInit {
     });
   }
 
-  editMetal(id: number, metalType: string, carat: number) {
-    this.updateMetalData.metalId = id;
-    this.selectedMetalType = metalType;
-    this.selectedMetalCarat = carat;
+  editMetal(metal: Metal) {
+    this.updateMetalData.metalId = metal.metalId;
+    this.selectedMetalType = metal.metalType;
+    this.selectedMetalCarat = metal.carat;
+    this.selectedMetalWeight = metal.weight;
     this.editCardVisible = !this.editCardVisible;
   }
 

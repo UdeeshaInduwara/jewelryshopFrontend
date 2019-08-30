@@ -25,6 +25,8 @@ export class JewelryMakingOrderComponent implements OnInit {
   metals: Array<Metal> = [];
   orders: Array<JewelryMakingOrder> = [];
 
+  selectedMetalWeight: number;
+
   constructor(
     private jewelryMakingOrderService: JewelryMakingOrderService,
     private gemService: GemService,
@@ -80,6 +82,10 @@ export class JewelryMakingOrderComponent implements OnInit {
         this.notificationService.show(3, 'Jewelry Making Order Placing Failed');
       }
     });
+  }
+
+  setSelectedMetalWeight(weight: number) {
+    this.selectedMetalWeight = weight;
   }
 
 }

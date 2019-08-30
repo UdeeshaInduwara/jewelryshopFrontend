@@ -13,7 +13,8 @@
                 <mat-form-field>
                   <mat-label>Select Metal</mat-label>
                   <mat-select [(ngModel)]="metalData.metalId" name="metalId">
-                    <mat-option *ngFor="let metal of metals" [value]="metal.metalId">
+                    <mat-option *ngFor="let metal of metals" [value]="metal.metalId"
+                                (click)="setSelectedMetalWeight(metal.weight)">
                       {{metal.metalType}} (carat {{metal.carat}})
                     </mat-option>
                   </mat-select>
@@ -21,7 +22,9 @@
               </div>
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Weight" type="number" name="givenMetalWeight" [(ngModel)]="jewelryMakingOrderData.givenMetalWeight">
+                  <input matInput placeholder="Weight" type="number" name="givenMetalWeight"
+                         [(ngModel)]="jewelryMakingOrderData.givenMetalWeight">
+                  <mat-hint *ngIf="selectedMetalWeight != null">Max Weight {{selectedMetalWeight}}</mat-hint>
                 </mat-form-field>
               </div>
             </div>
@@ -50,7 +53,8 @@
             <div class="row">
               <div class="col-md-12">
                 <mat-form-field class="example-full-width">
-                  <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="addedDate" [(ngModel)]="jewelryMakingOrderData.givenDate">
+                  <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="addedDate"
+                         [(ngModel)]="jewelryMakingOrderData.givenDate">
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker touchUi #picker></mat-datepicker>
                 </mat-form-field>
@@ -76,22 +80,22 @@
           <div class="table-responsive">
             <table class="table">
               <thead>
-                <th>Order ID</th>
-                <th>Gem</th>
-                <th>Metal</th>
-                <th>Given Metal Weight</th>
-                <th>Jewelry Maker</th>
-                <th>Given Date</th>
+              <th>Order ID</th>
+              <th>Gem</th>
+              <th>Metal</th>
+              <th>Given Metal Weight</th>
+              <th>Jewelry Maker</th>
+              <th>Given Date</th>
               </thead>
               <tbody>
-                <tr *ngFor="let order of orders">
-                  <td>{{order.jewMDId}}</td>
-                  <td>{{order.gem?.gemType}}</td>
-                  <td>{{order.metal?.metalType}}</td>
-                  <td>{{order.givenMetalWeight}}</td>
-                  <td>{{order.jewelryMaker?.jewMName}}</td>
-                  <td>{{order.givenDate | date}}</td>
-                </tr>
+              <tr *ngFor="let order of orders">
+                <td>{{order.jewMDId}}</td>
+                <td>{{order.gem?.gemType}}</td>
+                <td>{{order.metal?.metalType}}</td>
+                <td>{{order.givenMetalWeight}}</td>
+                <td>{{order.jewelryMaker?.jewMName}}</td>
+                <td>{{order.givenDate | date}}</td>
+              </tr>
               </tbody>
             </table>
           </div>
