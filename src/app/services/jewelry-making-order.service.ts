@@ -21,4 +21,8 @@ export class JewelryMakingOrderService {
   getAllJewelryMakingOrders(): Observable<Array<JewelryMakingOrder>> {
     return this.http.get<Array<JewelryMakingOrder>>(this.mainUrl + this.url);
   }
+
+  getOrdersCount(): Observable<number> {
+    return this.http.get<number>(this.mainUrl + this.url + '/count');
+  }
 }

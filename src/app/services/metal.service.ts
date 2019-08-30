@@ -30,4 +30,8 @@ export class MetalService {
   updateMetal(data: UpdateMetal): Observable<boolean> {
     return this.http.put<boolean>(this.mainUrl + this.url, data);
   }
+
+  getMetalCount(): Observable<number> {
+    return this.http.get<number>(this.mainUrl + this.url + '/count');
+  }
 }

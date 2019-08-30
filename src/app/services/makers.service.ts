@@ -24,4 +24,8 @@ export class MakersService {
   deleteMakers(id: number): Observable<boolean> {
     return this.http.delete<boolean>(this.mainUrl + this.url + '/' + id);
   }
+
+  getMakersCount(): Observable<number> {
+    return this.http.get<number>(this.mainUrl + this.url + '/count');
+  }
 }
