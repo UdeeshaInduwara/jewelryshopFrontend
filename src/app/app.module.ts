@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule, MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule, MatSelectModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import { JewelryMakingOrderComponent } from './jewelry-making-order/jewelry-making-order.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { JewelryMakingOrderComponent } from './jewelry-making-order/jewelry-maki
     GemComponent,
     MetalComponent,
     MakersComponent,
-    JewelryMakingOrderComponent
+    JewelryMakingOrderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

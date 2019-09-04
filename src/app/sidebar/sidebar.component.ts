@@ -14,7 +14,8 @@ export const ROUTES: RouteInfo[] = [
   {path: '/makingOrder', title: 'Jewelry Making Order', icon: 'create_new_folder', class: ''},
   {path: '/gem', title: 'Gem', icon: 'star', class: ''},
   {path: '/metal', title: 'Metal', icon: 'kitchen', class: ''},
-  {path: '/makers', title: 'Jewelry Makers', icon: 'person', class: ''}
+  {path: '/makers', title: 'Jewelry Makers', icon: 'person', class: ''},
+  {path: '/auth', title: 'Authentication', icon: 'lock', class: ''}
 ];
 
 @Component({
